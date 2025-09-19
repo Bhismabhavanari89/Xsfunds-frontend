@@ -1,0 +1,38 @@
+#growth {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 36px;
+  align-items: center;
+  padding: 80px 32px;
+  box-sizing: border-box;
+}
+
+#growth img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  flex: 1 1 400px;
+  width: 100%;
+  height: auto;
+}
+
+#growth .text-content {
+  max-width: 600px;
+  flex: 1 1 400px;
+  text-align: left;
+  color: #4a5568;
+}
+
+#growth h3 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 16px;
+  color: #2c7a58;
+}
+
+#growth p {
+  font-size: 16px;
+  line-height: 1.5;
+}

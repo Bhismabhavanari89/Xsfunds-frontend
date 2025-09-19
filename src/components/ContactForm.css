@@ -1,0 +1,117 @@
+#contact {
+  background-color: #f7fafc;
+  text-align: center;
+  padding: 80px 32px;
+  box-sizing: border-box;
+}
+
+#contact h2 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #2c7a58;
+}
+
+#contact .underline {
+  height: 4px;
+  width: 96px;
+  background-color: #2c7a58;
+  margin: 0 auto 40px auto;
+}
+
+#contact p.info-message {
+  color: #4a5568;
+  font-size: 16px;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  background: #fff;
+  padding: 48px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+  text-align: left;
+  max-width: 680px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+label {
+  color: #121c39;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  max-width: 100%;
+  padding: 18px 18px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 9px;
+  margin-bottom: 32px;
+  font-size: 16px;
+  font-family: inherit;
+  outline-color: #2c7a58;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #f9fafb;
+  color: #18181d;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: #2c7a58;
+  box-shadow: 0 0 0 2px rgba(44, 122, 88, 0.14);
+  background: #fff;
+}
+
+::placeholder {
+  color: #a0aec0;
+  opacity: 1;
+}
+
+button[type="submit"] {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 27%;
+  border: none;
+  margin: 8px auto 0 auto;
+  display: block;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.11);
+}
+
+button[type="submit"]:hover {
+  background-color: #1746a2;
+  transform: translateY(-2px) scale(1.01);
+}
+
+#contact .contact-info {
+  margin-top: 48px;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#contact .contact-info a {
+  color: #2c7a58;
+  transition: text-decoration 0.3s ease;
+}
+
+#contact .contact-info a:hover {
+  text-decoration: underline;
+}
