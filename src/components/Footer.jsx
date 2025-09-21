@@ -11,6 +11,12 @@ function Footer() {
         <div className="legal-link">
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
+        <div className="legal-link">
+          <Link to="/blogs">Blogs HomePage</Link>
+        </div>
+        <div className="legal-link">
+          <Link to="/blog">Blog</Link>
+        </div>
       </div>
       <p>Xs Funds © 2025 - Not a registered SEBI advisor. Investments involve risk. Please review terms carefully.</p>
       <p><b>Disclaimer:</b> The investment risk in the portfolio is borne by the investor</p>
