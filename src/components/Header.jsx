@@ -21,7 +21,18 @@ function Header() {
           <Link to="/#contact">Contact</Link>
           <Link to="/stockvsfd">Stock Vs Fd Calculator</Link>
         </div>
-        {/* Mobile menu toggle button etc */}
+        <button
+          className="mobileMenuToggle"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          onClick={handleMobileMenuToggle}
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? (
+            <span className="closeIcon" aria-hidden="true">&times;</span> // Close icon ×
+          ) : (
+            <span className="hamburgerIcon" aria-hidden="true">&#9776;</span> // Hamburger icon ☰
+          )}
+        </button>
       </nav>
       <div id="mobile-menu" className={`mobileMenu ${isMenuOpen ? 'active' : ''}`} aria-hidden={!isMenuOpen}>
         <Link to="/#home" tabIndex={isMenuOpen ? 0 : -1}>Home</Link>

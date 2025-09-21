@@ -28,7 +28,8 @@
 .logo img {
   width: 70%;
   height: auto;
-  max-width: 48px; /* Cap max width for large screens */
+  max-width: 48px;
+  /* Cap max width for large screens */
 }
 
 .navLinks {
@@ -54,33 +55,50 @@
   display: none;
   background: none;
   border: none;
-  color: #2c7a58;
+  color: #2c7a58 !important;
+  /* color applied here with !important */
   cursor: pointer;
   padding: 8px;
+  font-size: 2rem;
+  /* ensure button size consistency */
+  z-index: 1001;
 }
 
 /* Hamburger icon container */
+.mobileMenuToggle {
+  display: none;
+  background: rgba(255 255 255 / 0.8);
+  background-color: unset;
+}
+
 .hamburgerIcon {
-  display: flex;
+  display: none;
+  /* hide hamburger icon on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
   height: 20px;
+  color: #2c7a58;
 }
 
+/* Forcing the color to #2c7a58 on spans to override black */
 .hamburgerIcon span {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: #2c7a58;
+  background-color: #2c7a58 !important;
+  /* force color */
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 
 /* Close icon */
 .closeIcon {
+  display: none;
+  /* hide close icon on desktop */
   font-size: 28px;
-  color: #2c7a58;
+  color: #2c7a58 !important;
+  /* force color */
   line-height: 1;
   user-select: none;
 }
@@ -100,6 +118,29 @@
   transform: rotate(-45deg);
   position: relative;
   bottom: 8px;
+}
+
+/* Show hamburger and close icons on tablet and below */
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: inline-block;
+  }
+
+  .hamburgerIcon {
+    display: flex;
+  }
+
+  .mobileMenuToggle {
+    display: block;
+  }
+
+  .closeIcon {
+    display: inline;
+  }
 }
 
 /* Mobile menu hidden by default */
@@ -136,31 +177,22 @@
   display: block;
 }
 
-/* Responsive styles */
-
-/* Tablet and below - below 900px width */
-@media (max-width: 900px) {
-  .navLinks {
-    display: none;
-  }
-  .mobileMenuBtn {
-    display: inline-block;
-  }
-}
-
 /* Phone small screens under 480px */
 @media (max-width: 480px) {
   .logo img {
     width: 48px;
     height: auto;
   }
+
   .logo {
     width: auto;
   }
+
   .mobileMenu a {
     font-size: 18px;
     padding: 14px 24px;
   }
+
   .nav {
     padding: 12px 24px;
   }
