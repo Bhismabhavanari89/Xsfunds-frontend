@@ -21,6 +21,9 @@ footer {
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
+.legal-link {
+  color: #fff;
+}
 .legal-link:hover,
 .legal-link:focus {
   text-decoration: underline; 
