@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FAQ from './components/faqs'
 import TermsAndConditions from './components/TermsAndConditions'
 import PrivacyPolicy from './components/PrivacyPolicy'
+import BlogHomePage from './components/BlogHomePage'
+import BlogPage from './components/Blogs/BlogPage'
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/faqs" element={<FAQ/>} />
           <Route path="/tandc" element={<TermsAndConditions/>} />
           <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+          <Route path="/blogs" element={<BlogHomePage/>} />
+          <Route path="/blog" element={<BlogPage/>} />
         </Routes>
       </main>
       <Footer />
