@@ -21,7 +21,7 @@ function Header() {
           <Link to="/#contact">Contact</Link>
           <Link to="/stockvsfd">Stock Vs Fd Calculator</Link>
           <Link to="/faqs">Frequently Asked Questions</Link>
-          <Link to="/tandc">Frequently Asked Questions</Link>
+          {/* <Link to="/tandc">Frequently Asked Questions</Link> */}
         </div>
         <button
           className="mobileMenuToggle"
