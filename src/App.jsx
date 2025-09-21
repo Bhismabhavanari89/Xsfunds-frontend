@@ -10,9 +10,10 @@ import Footer from './components/Footer'
 import StockvsFd from './components/StockvsFd'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FAQ from './components/faqs'
+import TermsAndConditions from './components/TermsAndConditions'
+import PrivacyPolicy from './components/PrivacyPolicy'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -31,6 +32,8 @@ function App() {
           } />
           <Route path="/stockvsfd" element={<StockvsFd />} />
           <Route path="/faqs" element={<FAQ/>} />
+          <Route path="/tandc" element={<TermsAndConditions/>} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
         </Routes>
       </main>
       <Footer />

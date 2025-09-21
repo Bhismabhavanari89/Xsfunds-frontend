@@ -4,3 +4,30 @@ footer {
   padding: 32px 0;
   text-align: center;
 }
+.legal-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.legal-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.legal-link:hover,
+.legal-link:focus {
+  text-decoration: underline; 
+  outline: none;
+}
+@media (max-width: 480px) {
+  .legal-links{
+    gap: 0px;
+  }
+}
