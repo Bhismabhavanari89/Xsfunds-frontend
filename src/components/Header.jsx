@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpeg';
 import { HashLink as Link } from 'react-router-hash-link';
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
