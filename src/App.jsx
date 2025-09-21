@@ -9,6 +9,7 @@ import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import StockvsFd from './components/StockvsFd'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FAQ from './components/faqs'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
             </>
           } />
           <Route path="/stockvsfd" element={<StockvsFd />} />
+          <Route path="/faqs" element={<FAQ/>} />
         </Routes>
       </main>
       <Footer />

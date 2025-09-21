@@ -20,6 +20,7 @@ function Header() {
           <Link to="/#about">About</Link>
           <Link to="/#contact">Contact</Link>
           <Link to="/stockvsfd">Stock Vs Fd Calculator</Link>
+          <Link to="/faqs">Frequently Asked Questions</Link>
         </div>
         <button
           className="mobileMenuToggle"
@@ -39,6 +40,7 @@ function Header() {
         <Link to="/#about" tabIndex={isMenuOpen ? 0 : -1}>About</Link>
         <Link to="/#contact" tabIndex={isMenuOpen ? 0 : -1}>Contact</Link>
         <Link to="/stockvsfd" tabIndex={isMenuOpen ? 0 : -1}>Stock Vs Fd Calculator</Link>
+        <Link to="/faqs" tabIndex={isMenuOpen ? 0 : -1}>Frequently Asked Questions</Link>
       </div>
     </header>
   );
