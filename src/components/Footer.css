@@ -32,5 +32,6 @@ footer {
 @media (max-width: 480px) {
   .legal-links{
     gap: 0px;
+    flex-direction: column;
   }
 }
