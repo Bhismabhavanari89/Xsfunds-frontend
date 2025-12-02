@@ -13,6 +13,7 @@ import TermsAndConditions from './components/TermsAndConditions'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import BlogHomePage from './components/BlogHomePage'
 import BlogPage from './components/Blogs/BlogPage'
+import WorldClock from './components/WorldClock'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <>
     <Router>
       <Header />
+      <WorldClock/>
       <main>
         <Routes>
           <Route path="/" element={

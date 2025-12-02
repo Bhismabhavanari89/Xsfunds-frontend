@@ -1,0 +1,113 @@
+.world-clock-container {
+  margin-top: 79px;
+  width: 100vw;
+  max-width: 100vw;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.ticker-wrapper {
+  margin-top: 70px;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #2c7a58 0%, #4aa77d 100%);
+  border-radius: 16px;
+  padding: 1rem 2rem; /* Added horizontal padding for better spacing */
+  box-shadow: 0 15px 30px rgba(44, 122, 88, 0.4);
+  margin: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker-content {
+  display: flex;
+  animation: scrollRightToLeft 40s linear infinite; /* Slightly slower for smoothness */
+  gap: 4rem;
+  white-space: nowrap;
+  align-items: center;
+  padding-left: 100%;
+  padding-right: 50%; /* Added padding right so last item does not get clipped */
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  
+  padding: 0.8rem 1.5rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-right: 2.5rem; /* Added more margin for spacing */
+}
+
+.ticker-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 0.8rem;
+  opacity: 0.95;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.ticker-separator {
+  margin: 0 0.8rem;
+  opacity: 0.7;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.ticker-time {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 3px;
+  font-weight: 900;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .ticker-wrapper {
+    height: 60px;
+    padding: 0.8rem 1rem;
+  }
+  .ticker-content{
+    animation: scrollRightToLeft 20s linear infinite; 
+  }
+  .ticker-item {
+    /* min-width: 180px; */
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+  }
+
+  .ticker-label {
+    font-size: 0.8rem;
+  }
+
+  .ticker-time {
+    font-size: 1.2rem;
+  }
+}
