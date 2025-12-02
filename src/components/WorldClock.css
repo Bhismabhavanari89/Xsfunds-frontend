@@ -15,7 +15,7 @@
   overflow: hidden;
   background: linear-gradient(90deg, #2c7a58 0%, #4aa77d 100%);
   border-radius: 16px;
-  padding: 1rem 2rem; /* Added horizontal padding for better spacing */
+  padding: 1rem 2rem;
   box-shadow: 0 15px 30px rgba(44, 122, 88, 0.4);
   margin: 0;
   height: 42px;
@@ -30,18 +30,17 @@
 
 .ticker-content {
   display: flex;
-  animation: scrollRightToLeft 40s linear infinite; /* Slightly slower for smoothness */
+  animation: scrollRightToLeft 40s linear infinite;
   gap: 4rem;
   white-space: nowrap;
   align-items: center;
   padding-left: 100%;
-  padding-right: 50%; /* Added padding right so last item does not get clipped */
+  padding-right: 50%;
 }
 
 .ticker-item {
   display: flex;
   align-items: center;
-  
   padding: 0.8rem 1.5rem;
   color: #fff;
   font-weight: 700;
@@ -52,7 +51,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-right: 2.5rem; /* Added more margin for spacing */
+  margin-right: 2.5rem;
 }
 
 .ticker-label {
@@ -93,21 +92,34 @@
     height: 60px;
     padding: 0.8rem 1rem;
   }
-  .ticker-content{
-    animation: scrollRightToLeft 20s linear infinite; 
+  
+  .ticker-content {
+    animation: scrollRightToLeft 25s linear infinite;
+    padding-left: 30%;
+    padding-right: 30%;
+    gap: 1.5rem;
   }
+  
   .ticker-item {
-    /* min-width: 180px; */
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    margin-right: 1.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+    margin-right: 1rem;
+    min-width: auto;
+    flex-shrink: 1;
   }
-
+  
   .ticker-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
   }
-
+  
+  .ticker-separator {
+    margin: 0 0.4rem;
+    font-size: 1.1rem;
+  }
+  
   .ticker-time {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
   }
 }
