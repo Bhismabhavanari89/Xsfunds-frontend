@@ -54,7 +54,7 @@ function Contact() {
 
     setLoading(true);
     try {
-      const response = await fetch('https://xsfunds.onrender.com/api/contact', {
+      const response = await fetch('https://xsfunds-backend.vercel.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone }),
