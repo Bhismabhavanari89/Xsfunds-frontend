@@ -3,10 +3,24 @@ import './WorldClock.css';
 
 const timeZones = [
   { label: 'India', zone: 'Asia/Kolkata' },
-  { label: 'USA (New York)', zone: 'America/New_York' },
-  { label: 'UK (London)', zone: 'Europe/London' },
+  { label: 'United States (New York)', zone: 'America/New_York' },
+  { label: 'China', zone: 'Asia/Shanghai' },
+  { label: 'Japan', zone: 'Asia/Tokyo' },
+  { label: 'Hong Kong', zone: 'Asia/Hong_Kong' },       // CET/CEST
+  { label: 'Canada (Toronto)', zone: 'America/Toronto' },
+  { label: 'United Kingdom (London)', zone: 'Europe/London' },
+  { label: 'Taiwan', zone: 'Asia/Taipei' },
+  { label: 'Saudi Arabia', zone: 'Asia/Riyadh' },
+  { label: 'Germany', zone: 'Europe/Berlin' },
+  { label: 'Iran', zone: 'Asia/Tehran' },
+  { label: 'Switzerland', zone: 'Europe/Zurich' },
   { label: 'Australia (Sydney)', zone: 'Australia/Sydney' },
+  { label: 'Denmark', zone: 'Europe/Copenhagen' },
+  { label: 'Sweden', zone: 'Europe/Stockholm' },
+  { label: 'Finland', zone: 'Europe/Helsinki' },
+  { label: 'Estonia', zone: 'Europe/Tallinn' },
 ];
+
 
 const WorldClock = () => {
   const [times, setTimes] = React.useState({});
