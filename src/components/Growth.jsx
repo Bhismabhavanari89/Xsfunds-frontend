@@ -1,9 +1,10 @@
 import './Growth.css'
+import image from '../assets/tree.png'
 function Growth() {
     return (
         <section id="growth" className="fade-in">
             <img
-                src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1740&auto=format&fit=crop"
+                src={image}
                 alt="Positive stock market chart"
             />
             <div className="text-content">
