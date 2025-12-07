@@ -1,33 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './Header.css';
 import logo from '../assets/logo.jpeg';
 import { HashLink as Link } from 'react-router-hash-link';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const navigate = useNavigate(); // For programmatic navigation
+  const navigate = useNavigate();
 
-  const handleMobileMenuToggle = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+  // FIXED: Remove isMenuOpen from deps - use functional update
+  const handleMobileMenuToggle = useCallback((e) => {
+    e.stopPropagation();
+    setIsMenuOpen(prev => !prev);
+  }, []); // Empty deps - functional update doesn't need state
 
-  // Close menu and handle navigation
-  const handleLinkClick = (path) => {
+  const handleLinkClick = useCallback((path) => {
     setIsMenuOpen(false);
     
-    // If it's a full route (not hash), navigate to top
     if (path && !path.includes('#')) {
       navigate(path, { replace: true });
-      window.scrollTo(0, 0); // Scroll to top for new pages
+      window.scrollTo(0, 0);
     }
-  };
+  }, [navigate]);
 
-  // Close menu when clicking outside
+  // FIXED: Click outside handler
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (menuRef.current && 
+          !menuRef.current.contains(event.target) && 
+          !event.target.closest('.mobileMenuToggle')) {
         setIsMenuOpen(false);
       }
     };
@@ -70,40 +72,90 @@ function Header() {
             Frequently Asked Questions
           </Link>
         </div>
+        {/* FIXED: Toggle button - always clickable */}
         <button
           className="mobileMenuToggle"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           onClick={handleMobileMenuToggle}
+          style={{
+            zIndex: 9999,
+            position: 'relative',
+            pointerEvents: 'auto'
+          }}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMenuOpen}
+          type="button"
         >
           {isMenuOpen ? (
-            <span className="closeIcon" aria-hidden="true">&times;</span>
+            <span 
+              className="closeIcon" 
+              style={{ pointerEvents: 'none' }}
+              aria-hidden="true"
+            >
+              ×
+            </span>
           ) : (
-            <span className="hamburgerIcon" aria-hidden="true">&#9776;</span>
+            <span 
+              className="hamburgerIcon" 
+              style={{ pointerEvents: 'none' }}
+              aria-hidden="true"
+            >
+              ☰
+            </span>
           )}
         </button>
       </nav>
+      {/* FIXED: Remove aria-hidden & use inert polyfill approach */}
       <div 
         ref={menuRef}
         id="mobile-menu" 
-        className={`mobileMenu ${isMenuOpen ? 'active' : ''}`} 
-        aria-hidden={!isMenuOpen}
+        className={`mobileMenu ${isMenuOpen ? 'active' : ''}`}
+        role="menu"
+        aria-labelledby="mobile-menu-toggle"
+        tabIndex={isMenuOpen ? 0 : -1}
+        style={{ 
+          zIndex: 9998,
+          ...(isMenuOpen ? {} : { display: 'none' }) // Hide when closed
+        }}
       >
-        <Link to="/#home" tabIndex={isMenuOpen ? 0 : -1}>Home</Link>
-        <Link to="/#about" tabIndex={isMenuOpen ? 0 : -1}>About</Link>
-        <Link to="/#contact" tabIndex={isMenuOpen ? 0 : -1}>Contact</Link>
+        <Link 
+          to="/#home" 
+          role="menuitem"
+          tabIndex={isMenuOpen ? 0 : -1}
+          onClick={() => handleLinkClick('/#home')}
+        >
+          Home
+        </Link>
+        <Link 
+          to="/#about" 
+          role="menuitem"
+          tabIndex={isMenuOpen ? 0 : -1}
+          onClick={() => handleLinkClick('/#about')}
+        >
+          About
+        </Link>
+        <Link 
+          to="/#contact" 
+          role="menuitem"
+          tabIndex={isMenuOpen ? 0 : -1}
+          onClick={() => handleLinkClick('/#contact')}
+        >
+          Contact
+        </Link>
         <a 
           href="/stockvsfd" 
+          role="menuitem"
           tabIndex={isMenuOpen ? 0 : -1}
           onClick={(e) => {
             e.preventDefault();
             handleLinkClick('/stockvsfd');
           }}
+          
         >
           Stock Vs Fd Calculator
         </a>
         <a 
           href="/faqs" 
+          role="menuitem"
           tabIndex={isMenuOpen ? 0 : -1}
           onClick={(e) => {
             e.preventDefault();
